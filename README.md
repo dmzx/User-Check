@@ -1,5 +1,7 @@
 # User check Extension
 
+[![Build Status](https://github.com/dmzx/User-Check/workflows/Tests/badge.svg)](https://github.com/phpbb-extensions/dmzx/User-Check)
+
 ## Install
 1. Download the latest release.
 2. In the `ext` directory of your phpBB board, create a new directory named `dmzx` (if it does not already exist).
