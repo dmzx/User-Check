@@ -1,0 +1,63 @@
+{% INCLUDE 'overall_header.html' %}
+
+<h1><i class="fa fa-user" aria-hidden="true"></i> {{ lang('ACP_USERCHECK_TITLE') }}</h1>
+
+<p><img src="https://img.shields.io/badge/{{ lang('ACP_USERCHECK_VERSION') }}-{{ USERCHECK_VERSION }}-green.svg?style=plastic" /></p>
+
+{% if S_ERROR %}
+	<div class="errorbox">
+		<h3>{{ lang('WARNING') }}</h3>
+		<p>{{ ERROR_MSG }}</p>
+	</div>
+{% endif %}
+
+<form id="dmzx_usercheck_acp" method="post" action="{{ U_ACTION }}">
+	<fieldset>
+		<legend><i class="icon fa-cog fa-lg" aria-hidden="true"></i> {{ lang('ACP_USERCHECK') }}</legend>
+		<dl>
+			<dt>
+				<label for="dmzx_usercheck_enable">{{ lang('ACP_USERCHECK_ENABLE') ~ lang('COLON') }}</label><br><span>{{ lang('ACP_USERCHECK_ENABLE_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" id="dmzx_usercheck_enable" class="radio" name="dmzx_usercheck_enable" value="1"{% if USERCHECK_ENABLE %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="dmzx_usercheck_enable" value="0"{% if not USERCHECK_ENABLE %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="dmzx_usercheck_proxy">{{ lang('ACP_USERCHECK_PROXY') ~ lang('COLON') }}</label><br><span>{{ lang('ACP_USERCHECK_PROXY_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" id="dmzx_usercheck_proxy" class="radio" name="dmzx_usercheck_proxy" value="1"{% if USERCHECK_PROXY %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="dmzx_usercheck_proxy" value="0"{% if not USERCHECK_PROXY %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="dmzx_usercheck_ip_check">{{ lang('ACP_USERCHECK_IP_CHECK') ~ lang('COLON') }}</label><br><span>{{ lang('ACP_USERCHECK_IP_CHECK_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" id="dmzx_usercheck_ip_check" class="radio" name="dmzx_usercheck_ip_check" value="1"{% if USERCHECK_IP_CHECK %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="dmzx_usercheck_ip_check" value="0"{% if not USERCHECK_IP_CHECK %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt>
+				<label for="dmzx_usercheck_cookie_check">{{ lang('ACP_USERCHECK_COOKIE_CHECK') ~ lang('COLON') }}</label><br><span>{{ lang('ACP_USERCHECK_COOKIE_CHECK_EXPLAIN') }}</span>
+			</dt>
+			<dd>
+				<label><input type="radio" id="dmzx_usercheck_cookie_check" class="radio" name="dmzx_usercheck_cookie_check" value="1"{% if USERCHECK_COOKIE_CHECK %} checked="checked"{% endif %} /> {{ lang('YES') }}</label>
+				<label><input type="radio" class="radio" name="dmzx_usercheck_cookie_check" value="0"{% if not USERCHECK_COOKIE_CHECK %} checked="checked"{% endif %} /> {{ lang('NO') }}</label>
+			</dd>
+		</dl>
+	</fieldset>
+
+	<fieldset class="submit-buttons">
+		<legend>{{ lang('SUBMIT') }}</legend>
+		<input class="button1" type="submit" id="submit" name="submit" value="{{ lang('SUBMIT') }}" />
+	</fieldset>
+
+	{{ S_FORM_TOKEN }}
+</form>
+
+{% INCLUDE 'overall_footer.html' %}

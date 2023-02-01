@@ -1,0 +1,10 @@
+services:
+    _defaults:
+        autowire: true
+    dmzx.usercheck.listener:
+        class: 'dmzx\usercheck\event\listener'
+        tags: [{ name: 'event.listener' }]
+    dmzx.usercheck.controller.acp:
+        class: 'dmzx\usercheck\controller\acp_controller'
+    dmzx.usercheck.core.functions:
+        class: 'dmzx\usercheck\core\functions'
