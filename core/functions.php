@@ -50,7 +50,7 @@ class functions
 	{
 		$ip	= $this->get_ip();
 
-	 	$curl_yes = (function_exists('curl_version')) ? true : false;
+		$curl_yes = (function_exists('curl_version')) ? true : false;
 
 		$proxy = '';
 
@@ -88,7 +88,7 @@ class functions
 		{
 			return $server['HTTP_CLIENT_IP'];
 		}
-		elseif (isset($server['HTTP_X_FORWARDED_FOR']))
+		else if (isset($server['HTTP_X_FORWARDED_FOR']))
 		{
 			return $server['HTTP_X_FORWARDED_FOR'];
 		}
