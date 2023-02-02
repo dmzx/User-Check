@@ -58,7 +58,7 @@ class functions
 		{
 			$curl_handle = curl_init();
 			$data = '[{"query": "'.$ip.'", "fields": "status,proxy"}]';
-			curl_setopt($curl_handle, CURLOPT_URL, 'https://ip-api.com/batch');
+			curl_setopt($curl_handle, CURLOPT_URL, 'http://ip-api.com/batch');
 			curl_setopt($curl_handle, CURLOPT_HTTPHEADER,['Content-Type: application/json']);
 			curl_setopt($curl_handle, CURLOPT_SSL_VERIFYPEER, false);
 			curl_setopt($curl_handle, CURLOPT_POST, true);
