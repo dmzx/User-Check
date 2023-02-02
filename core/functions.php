@@ -133,7 +133,7 @@ class functions
 	{
 		$cookie_account = '';
 
-		if ($this->request->is_set($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE))
+		if ($this->request->variable($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE))
 		{
 			$cookiedata = $this->request->variable($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE);
 			$user_cookie = '';
