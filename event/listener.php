@@ -94,7 +94,7 @@ class listener implements EventSubscriberInterface
 
 		if ($this->config['dmzx_usercheck_cookie_check'])
 		{
-			if (!$this->request->is_set($this->config['cookie_name'] . '_uc', \phpbb\request\request_interface::COOKIE))
+			if (!$this->request->is_set($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE))
 			{
 				$this->user->set_cookie('uc', $this->user->data['user_id'] . '|' . base64_encode($this->user->data['username']), time() + 518400000);
 			}
@@ -158,7 +158,7 @@ class listener implements EventSubscriberInterface
 		if ($this->config['dmzx_usercheck_cookie_check'])
 		{
 
-			if (!$this->request->is_set($this->config['cookie_name'] . '_uc', \phpbb\request\request_interface::COOKIE))
+			if (!$this->request->is_set($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE))
 			{
 				$this->user->set_cookie('uc', $user_id . '|' . base64_encode($user_row['username']), time() + 518400000);
 			}

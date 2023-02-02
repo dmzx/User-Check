@@ -36,5 +36,5 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, [
 	'USERCHECK_PROXY'				=> 'You’re proxy is on switch off to register!',
-	'USERCHECK_ALREADY'				=> 'You have already an account registered!',
+	'USERCHECK_ALREADY'				=> 'You already have an account registered!',
 ]);

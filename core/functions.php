@@ -82,7 +82,7 @@ class functions
 
 	public function get_ip()
 	{
-		$server = $this->request->get_super_global(\phpbb\request\request_interface::SERVER);
+		$server = $this->request->get_super_global(request_interface::SERVER);
 
 		if (isset($server['HTTP_CLIENT_IP']))
 		{
@@ -133,9 +133,9 @@ class functions
 	{
 		$cookie_account = '';
 
-		if ($this->request->is_set($this->config['cookie_name'] . '_uc', \phpbb\request\request_interface::COOKIE))
+		if ($this->request->is_set($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE)
 		{
-			$cookiedata = $this->request->variable($this->config['cookie_name'] . '_uc', '', true, \phpbb\request\request_interface::COOKIE);
+			$cookiedata = $this->request->variable($this->config['cookie_name'] . '_uc', '', true, request_interface::COOKIE);
 			$user_cookie = '';
 
 			$c_userdata = (!empty($cookiedata)) ? explode('|', $cookiedata) : '';

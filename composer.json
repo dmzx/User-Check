@@ -3,8 +3,8 @@
 	"type": "phpbb-extension",
 	"description": "User check registration.",
 	"homepage": "https://www.dmzx-web.net",
-	"version": "1.0.0",
-	"time": "2023-01-16",
+	"version": "1.0.1",
+	"time": "2023-02-0",
 	"keywords": [
 		"phpbb",
 		"extension",
